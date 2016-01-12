@@ -12,8 +12,7 @@
 #define Screen_H    [UIScreen mainScreen].bounds.size.height
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView          * SCtableview;
-@property(nonatomic,strong)NSMutableDictionary  * SCdict;
-@property(nonatomic,strong)UIButton             * cart_btn;
+@property(nonatomic,strong)UIButton             * SCcart_btn;
 @end
 
 @implementation ViewController
@@ -35,7 +34,7 @@
 -(void)initView
 {
     [self.view addSubview:self.SCtableview];
-    [self.view addSubview:self.cart_btn];
+    [self.view addSubview:self.SCcart_btn];
 }
 
 #pragma mark- tableview delegate
@@ -103,8 +102,8 @@ static NSString * cellid  = @"cellid";
                          ImageView:cell.imageView
                       donghua_view:self.SCtableview
                         super_view:self.view
-                         end_point:CGPointMake(Screen_W-46,22)
-                          end_view:self.cart_btn
+                         end_point:self.SCcart_btn.frame.origin
+                          end_view:self.SCcart_btn
      ];
 }
 
@@ -123,22 +122,16 @@ static NSString * cellid  = @"cellid";
     return _SCtableview;
 }
 
--(UIButton *)cart_btn
+-(UIButton *)SCcart_btn
 {
-    if (!_cart_btn)
+    if (!_SCcart_btn)
     {
-        _cart_btn = [[UIButton alloc] initWithFrame:CGRectMake(Screen_W-46, 22, 36, 36)];
-        [_cart_btn setImage:[UIImage imageNamed:@"Solo_good_cart_btn.png"] forState:UIControlStateNormal];
+        _SCcart_btn = [[UIButton alloc] initWithFrame:CGRectMake(Screen_W-46, 22, 20, 20)];
+        [_SCcart_btn setImage:[UIImage imageNamed:@"Solo_good_cart_btn.png"] forState:UIControlStateNormal];
+        _SCcart_btn.imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
-    return _cart_btn;
+    return _SCcart_btn;
 }
 
--(NSMutableDictionary *)SCdict
-{
-    if (!_SCdict)
-    {
-        _SCdict = [ NSMutableDictionary new];
-    }
-    return _SCdict;
-}
+
 @end

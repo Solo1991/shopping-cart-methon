@@ -54,6 +54,8 @@
         self.path = [UIBezierPath bezierPath];
         [self.path moveToPoint:_layer.position];
         
+        //  the track you can custom
+        //  point-> point1 ->point2
         [self.path addCurveToPoint:self.end_point
                      controlPoint1:CGPointMake(Screen_W/4,self.end_point.y+50)
                      controlPoint2:CGPointMake(self.end_point.x-50, self.end_point.y-50)];
