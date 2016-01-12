@@ -13,6 +13,7 @@
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView          * SCtableview;
 @property(nonatomic,strong)NSMutableDictionary  * SCdict;
+@property(nonatomic,strong)UIButton             * cart_btn;
 @end
 
 @implementation ViewController
@@ -34,6 +35,7 @@
 -(void)initView
 {
     [self.view addSubview:self.SCtableview];
+    [self.view addSubview:self.cart_btn];
 }
 
 #pragma mark- tableview delegate
@@ -91,7 +93,6 @@ static NSString * cellid  = @"cellid";
 {
     NSIndexPath *indexPath  = [NSIndexPath indexPathForRow:sender.tag inSection:0];
     UITableViewCell *cell = [self.SCtableview cellForRowAtIndexPath:indexPath];
-                             //dequeueReusableCellWithIdentifier:cellid forIndexPath:indexPath];
     
     CGRect rect             =   [self.SCtableview rectForRowAtIndexPath:indexPath];
     rect.origin.y           =   rect.origin.y - [self.SCtableview contentOffset].y;
@@ -102,7 +103,9 @@ static NSString * cellid  = @"cellid";
                          ImageView:cell.imageView
                       donghua_view:self.SCtableview
                         super_view:self.view
-                         end_point:CGPointMake(Screen_W-46,22)];
+                         end_point:CGPointMake(Screen_W-46,22)
+                          end_view:self.cart_btn
+     ];
 }
 
 
@@ -111,13 +114,23 @@ static NSString * cellid  = @"cellid";
 {
     if (!_SCtableview) {
         _SCtableview            = [[UITableView alloc]
-                                   initWithFrame:CGRectMake(0, 20,Screen_W, Screen_H-20)
+                                   initWithFrame:CGRectMake(0, 50,Screen_W, Screen_H-50)
                                    style:UITableViewStylePlain];
         _SCtableview.delegate   = self;
         _SCtableview.dataSource = self;
         
     }
     return _SCtableview;
+}
+
+-(UIButton *)cart_btn
+{
+    if (!_cart_btn)
+    {
+        _cart_btn = [[UIButton alloc] initWithFrame:CGRectMake(Screen_W-46, 22, 36, 36)];
+        [_cart_btn setImage:[UIImage imageNamed:@"Solo_good_cart_btn.png"] forState:UIControlStateNormal];
+    }
+    return _cart_btn;
 }
 
 -(NSMutableDictionary *)SCdict

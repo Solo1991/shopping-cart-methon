@@ -18,6 +18,7 @@
 		F8E5346D1C44A71C00F8F3D1 /* Solo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E5346C1C44A71C00F8F3D1 /* Solo_1.png */; };
 		F8E5346F1C44A77700F8F3D1 /* Solo_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E5346E1C44A77700F8F3D1 /* Solo_2.png */; };
 		F8E534741C44ABC300F8F3D1 /* Solo_Cart_Methon.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E534731C44ABC300F8F3D1 /* Solo_Cart_Methon.m */; };
+		F8E534791C44D3FE00F8F3D1 /* Solo_good_cart_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E534781C44D3FE00F8F3D1 /* Solo_good_cart_btn.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		F8E5346E1C44A77700F8F3D1 /* Solo_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Solo_2.png; sourceTree = "<group>"; };
 		F8E534721C44ABC300F8F3D1 /* Solo_Cart_Methon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Solo_Cart_Methon.h; sourceTree = "<group>"; };
 		F8E534731C44ABC300F8F3D1 /* Solo_Cart_Methon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Solo_Cart_Methon.m; sourceTree = "<group>"; };
+		F8E534781C44D3FE00F8F3D1 /* Solo_good_cart_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Solo_good_cart_btn.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +110,7 @@
 		F8E534371C44A19A00F8F3D1 /* SoloShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
-				F8E534721C44ABC300F8F3D1 /* Solo_Cart_Methon.h */,
-				F8E534731C44ABC300F8F3D1 /* Solo_Cart_Methon.m */,
+				F8E534751C44D25B00F8F3D1 /* Solo_Cart_Methon */,
 				F8E5346B1C44A6A000F8F3D1 /* Solo_png */,
 				F8E5343B1C44A19A00F8F3D1 /* AppDelegate.h */,
 				F8E5343C1C44A19A00F8F3D1 /* AppDelegate.m */,
@@ -153,10 +154,20 @@
 		F8E5346B1C44A6A000F8F3D1 /* Solo_png */ = {
 			isa = PBXGroup;
 			children = (
+				F8E534781C44D3FE00F8F3D1 /* Solo_good_cart_btn.png */,
 				F8E5346E1C44A77700F8F3D1 /* Solo_2.png */,
 				F8E5346C1C44A71C00F8F3D1 /* Solo_1.png */,
 			);
 			name = Solo_png;
+			sourceTree = "<group>";
+		};
+		F8E534751C44D25B00F8F3D1 /* Solo_Cart_Methon */ = {
+			isa = PBXGroup;
+			children = (
+				F8E534721C44ABC300F8F3D1 /* Solo_Cart_Methon.h */,
+				F8E534731C44ABC300F8F3D1 /* Solo_Cart_Methon.m */,
+			);
+			name = Solo_Cart_Methon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8E534481C44A19A00F8F3D1 /* LaunchScreen.storyboard in Resources */,
+				F8E534791C44D3FE00F8F3D1 /* Solo_good_cart_btn.png in Resources */,
 				F8E5346D1C44A71C00F8F3D1 /* Solo_1.png in Resources */,
 				F8E534451C44A19A00F8F3D1 /* Assets.xcassets in Resources */,
 				F8E5346F1C44A77700F8F3D1 /* Solo_2.png in Resources */,
@@ -520,6 +532,7 @@
 				F8E534641C44A19A00F8F3D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8E534651C44A19A00F8F3D1 /* Build configuration list for PBXNativeTarget "SoloShoppingCartTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +541,7 @@
 				F8E534671C44A19A00F8F3D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8E534681C44A19A00F8F3D1 /* Build configuration list for PBXNativeTarget "SoloShoppingCartUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +550,7 @@
 				F8E5346A1C44A19A00F8F3D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

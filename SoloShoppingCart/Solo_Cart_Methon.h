@@ -22,5 +22,6 @@
                     ImageView:(UIImageView *)imageView
                  donghua_view:(UIView*)donghua_view
                    super_view:(UIView*)super_view
-                    end_point:(CGPoint)end_point;
+                    end_point:(CGPoint)end_point
+                     end_view:(UIView*)end_view;
 @end

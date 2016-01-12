@@ -24,11 +24,13 @@
                  donghua_view:(UIView*)donghua_view
                    super_view:(UIView*)super_view
                     end_point:(CGPoint)end_point
+                     end_view:(UIView*)end_view
 {
     Solo_Cart_Methon *solo_cart_methon  = [Solo_Cart_Methon new];
     solo_cart_methon.donghua_view       = donghua_view;
     solo_cart_methon.super_view         = super_view;
     solo_cart_methon.end_point          = end_point;
+    solo_cart_methon.end_view           = end_view;
     
     [solo_cart_methon startAnimationWithRect:rect ImageView:imageView];
 }
@@ -44,7 +46,6 @@
         _layer.bounds = rect;
         [_layer setCornerRadius:CGRectGetHeight([_layer bounds]) / 2];
         _layer.masksToBounds = YES;
-        // 导航64
         _layer.position = CGPointMake(imageView.center.x, CGRectGetMidY(rect)+64);
         
         
