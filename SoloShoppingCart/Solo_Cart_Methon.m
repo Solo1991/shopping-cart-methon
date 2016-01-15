@@ -14,9 +14,8 @@
 {
     CALayer     *_layer;
 }
-
 @property(nonatomic,strong)UIView  *super_view;
-@property(nonatomic,strong)UIView  *donghua_view;
+@property(nonatomic,strong)UIView  *tableview;
 @property(nonatomic,strong)UIView  *end_view;
 @property(nonatomic)       CGPoint end_point;
 @property(nonatomic,strong)CALayer *layer;
@@ -24,21 +23,27 @@
 @end
 @implementation Solo_Cart_Methon
 
-+(void)startAnimationWithRect:(CGRect)rect
-                    ImageView:(UIImageView *)imageView
-                 donghua_view:(UIView*)donghua_view
-                   super_view:(UIView*)super_view
-                    end_point:(CGPoint)end_point
-                     end_view:(UIView*)end_view
+
+
++(void)startAnimationWithIndexPath:(NSIndexPath*)indexpath
+                         tableview:(UITableView*)tableview
+                          end_view:(UIView*)end_view
 {
-    Solo_Cart_Methon *solo_cart_methon  = [Solo_Cart_Methon new];
-    solo_cart_methon.donghua_view       = donghua_view;
-    solo_cart_methon.super_view         = super_view;
-    solo_cart_methon.end_point          = end_point;
-    solo_cart_methon.end_view           = end_view;
+    UITableViewCell *cell   = [tableview cellForRowAtIndexPath:indexpath];
+    CGRect rect             = [tableview rectForRowAtIndexPath:indexpath];
+    rect.origin.y           =   rect.origin.y - [tableview contentOffset].y;
+    CGRect  headRect        =   cell.imageView.frame;
+    headRect.origin.y       =   rect.origin.y + headRect.origin.y;
     
-    [solo_cart_methon startAnimationWithRect:rect ImageView:imageView];
+    Solo_Cart_Methon *solo_cart_methon  = [Solo_Cart_Methon new];
+    solo_cart_methon.tableview          = tableview;
+    solo_cart_methon.end_view           = end_view;
+    solo_cart_methon.super_view         = tableview.superview;
+    solo_cart_methon.end_point          = end_view.center;
+    
+    [solo_cart_methon startAnimationWithRect:headRect ImageView:cell.imageView];
 }
+
 -(void)startAnimationWithRect:(CGRect)rect
                     ImageView:(UIImageView *)imageView
 {
@@ -70,7 +75,7 @@
 }
 -(void)groupAnimation
 {
-    self.donghua_view.userInteractionEnabled = NO;
+    self.tableview.userInteractionEnabled = NO;
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     animation.path = _path.CGPath;
     animation.rotationMode = kCAAnimationRotateAuto;
@@ -100,7 +105,7 @@
 {
     if (anim == [_layer animationForKey:@"group"])
     {
-        self.donghua_view.userInteractionEnabled = YES;
+        self.tableview.userInteractionEnabled = YES;
         [_layer removeFromSuperlayer];
         _layer = nil;
         CATransition *animation = [CATransition animation];

@@ -59,6 +59,7 @@ static NSString * cellid  = @"cellid";
         
         btn = [[UIButton alloc] initWithFrame:CGRectMake(Screen_W-100, 5, 90, 40)];
         [btn setTitle:@"添加到购物车" forState:UIControlStateNormal];
+        [btn setBackgroundColor:[UIColor yellowColor]];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
         [btn addTarget:self action:@selector(showAni:) forControlEvents:UIControlEventTouchUpInside];
@@ -86,21 +87,17 @@ static NSString * cellid  = @"cellid";
 
 -(void)showAni:(UIButton*)sender
 {
+    
     NSIndexPath *indexPath  = [NSIndexPath indexPathForRow:sender.tag inSection:0];
-    UITableViewCell *cell = [self.SCtableview cellForRowAtIndexPath:indexPath];
-    
-    CGRect rect             =   [self.SCtableview rectForRowAtIndexPath:indexPath];
-    rect.origin.y           =   rect.origin.y - [self.SCtableview contentOffset].y;
-    CGRect  headRect        =   cell.imageView.frame;
-    headRect.origin.y       =   rect.origin.y + headRect.origin.y;
-    
-    [Solo_Cart_Methon startAnimationWithRect:headRect
-                         ImageView:cell.imageView
-                      donghua_view:self.SCtableview
-                        super_view:self.view
-                         end_point:self.SCcart_btn.frame.origin
-                          end_view:self.SCcart_btn
-     ];
+
+    [Solo_Cart_Methon startAnimationWithIndexPath:indexPath tableview:self.SCtableview end_view:self.SCcart_btn];
+//    [Solo_Cart_Methon startAnimationWithRect:headRect
+//                         ImageView:cell.imageView
+//                      donghua_view:self.SCtableview
+//                        super_view:self.view
+//                         end_point:self.SCcart_btn.frame.origin
+//                          end_view:self.SCcart_btn
+//     ];
 }
 
 
