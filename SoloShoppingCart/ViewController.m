@@ -55,10 +55,12 @@ static NSString * cellid  = @"cellid";
         cell.selectionStyle         = UITableViewCellSelectionStyleNone;
         cell.imageView.contentMode  = UIViewContentModeScaleAspectFit;
         cell.imageView.bounds       = CGRectMake(0, 0, 40, 40);
+
         
-        btn = [[UIButton alloc] initWithFrame:CGRectMake(Screen_W-100, 5, 40, 40)];
+        btn = [[UIButton alloc] initWithFrame:CGRectMake(Screen_W-100, 5, 90, 40)];
         [btn setTitle:@"添加到购物车" forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
         [btn addTarget:self action:@selector(showAni:) forControlEvents:UIControlEventTouchUpInside];
         [cell addSubview:btn];
     }
@@ -67,10 +69,10 @@ static NSString * cellid  = @"cellid";
     
     if (indexPath.row%2)
     {
-        cell.imageView.image = [UIImage imageNamed:@"Solo_1.png"];
+        cell.imageView.image = [UIImage imageNamed:@"Solo_1.jpg"];
     }else
     {
-        cell.imageView.image = [UIImage imageNamed:@"Solo_2.png"];
+        cell.imageView.image = [UIImage imageNamed:@"Solo_2.jpg"];
     }
     return cell;
 }
