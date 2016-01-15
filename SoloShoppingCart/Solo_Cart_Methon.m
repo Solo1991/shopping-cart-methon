@@ -14,6 +14,11 @@
 {
     CALayer     *_layer;
 }
+
+@property(nonatomic,strong)UIView  *super_view;
+@property(nonatomic,strong)UIView  *donghua_view;
+@property(nonatomic,strong)UIView  *end_view;
+@property(nonatomic)       CGPoint end_point;
 @property(nonatomic,strong)CALayer *layer;
 @property(nonatomic,strong)UIBezierPath *path;
 @end
