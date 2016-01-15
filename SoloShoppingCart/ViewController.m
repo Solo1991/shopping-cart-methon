@@ -34,12 +34,12 @@
 #pragma mark- tableview delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return 30;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 50;
 }
 
 
@@ -54,10 +54,10 @@ static NSString * cellid  = @"cellid";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
         cell.selectionStyle         = UITableViewCellSelectionStyleNone;
         cell.imageView.contentMode  = UIViewContentModeScaleAspectFit;
-        cell.imageView.bounds       = CGRectMake(0, 0, 70, 70);
+        cell.imageView.bounds       = CGRectMake(0, 0, 40, 40);
         
-        btn = [[UIButton alloc] initWithFrame:CGRectMake(Screen_W-100, 20, 50, 50)];
-        [btn setTitle:@"Add" forState:UIControlStateNormal];
+        btn = [[UIButton alloc] initWithFrame:CGRectMake(Screen_W-100, 5, 40, 40)];
+        [btn setTitle:@"添加到购物车" forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(showAni:) forControlEvents:UIControlEventTouchUpInside];
         [cell addSubview:btn];
