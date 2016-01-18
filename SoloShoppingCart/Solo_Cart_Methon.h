@@ -3,12 +3,14 @@
 //  PBAShow
 //
 //  Created by Solo on 15/12/30.
-//  Copyright © 2015年 PBA. All rights reserved.
+//  Copyright © 2015年 Solo. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface Solo_Cart_Methon : NSObject
+
+
 
 +(void)startAnimationWithIndexPath:(NSIndexPath*)indexpath
                          tableview:(UITableView*)tableview
